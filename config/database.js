@@ -6,10 +6,7 @@ const MONGO_URI = process.env.MONGO_URI;
 
 const connectDatabase = () => {
   mongoose
-    .connect(
-      "mongodb+srv://reabilitado97:xfyNawVTAO2vnwJa@cluster0.gulwx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
-      { useNewUrlParser: true, useUnifiedTopology: true }
-    )
+    .connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
       console.log("Mongoose Connected");
     })
