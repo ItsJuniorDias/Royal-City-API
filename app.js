@@ -9,21 +9,10 @@ const app = express();
 
 dotenv.config();
 
-const allowedOrigins = [
-  "http://localhost:3000",
-  "https://omnistate.vercel.app",
-];
-
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true,
+    origin: "https://omnistate.vercel.app", // your frontend URL
+    credentials: true, // if you want to send cookies/auth headers
   })
 );
 
