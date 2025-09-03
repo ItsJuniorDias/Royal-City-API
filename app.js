@@ -11,7 +11,7 @@ dotenv.config();
 
 app.use(
   cors({
-    origin: "https://omnistate.vercel.app", // your frontend URL
+    origin: "https://omnistate.onrender.com", // your frontend URL
     credentials: true, // if you want to send cookies/auth headers
   })
 );
