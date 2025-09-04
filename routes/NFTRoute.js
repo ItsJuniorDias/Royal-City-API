@@ -1,8 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
 
-const contractABI = require("../abi/NFT.json");
-
 const { default: axios } = require("axios");
 
 dotenv.config();
