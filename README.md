@@ -1,158 +1,139 @@
-Royal City API
+# Royal City API
 
 Backend API for the Royal City website.
 
-📚 About
+## 📚 About
 
-This project provides the endpoints and backend functionalities for the Royal City website. It includes route handling, data models, middlewares, environment configuration, and optionally Swagger API documentation.
+This project provides the endpoints and backend functionalities for the *Royal City* website. It includes route handling, data models, middlewares, environment configuration, and optionally Swagger API documentation.
 
-🛠 Technologies
+## 🛠 Technologies
 
-Node.js
+* Node.js
+* Express
+* MongoDB (or another database, check project models)
+* Swagger for API documentation
+* Dotenv for environment variables
+* Other libraries: authentication, file uploads, validation, etc.
 
-Express
+## ℹ️ Prerequisites
 
-MongoDB (or another database, check project models)
+* Node.js (recommended version: **>= 14** or as specified in `package.json`)
+* npm or yarn
+* Configured database (e.g., MongoDB)
+* Environment variables set up
 
-Swagger for API documentation
+## 🔧 Installation
 
-Dotenv for environment variables
+1. Clone the repository:
 
-Other libraries: authentication, file uploads, validation, etc.
+   ```bash
+   git clone https://github.com/ItsJuniorDias/Royal-City-API.git
+   cd Royal-City-API
+   ```
 
-ℹ️ Prerequisites
+2. Install dependencies:
 
-Node.js (recommended version: >= 14 or as specified in package.json)
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-npm or yarn
+3. Create a `.env` file based on `.env.example`:
 
-Configured database (e.g., MongoDB)
+   ```bash
+   cp .env.example .env
+   ```
 
-Environment variables set up
+   Fill in the environment variables (example):
 
-🔧 Installation
+   ```
+   PORT=3000
+   DB_URI=mongodb://user:password@host:port/database_name
+   JWT_SECRET=your_secret_key
+   OTHER_VARIABLES=...
+   ```
 
-Clone the repository:
+4. If there are build tasks or database migrations/seeds, run them:
 
-git clone https://github.com/ItsJuniorDias/Royal-City-API.git
-cd Royal-City-API
+   ```bash
+   npm run build
+   # or
+   npm run migrate
+   # or
+   npm run seed
+   ```
 
+   (Check which scripts are available in `package.json`.)
 
-Install dependencies:
-
-npm install
-# or
-yarn install
-
-
-Create a .env file based on .env.example:
-
-cp .env.example .env
-
-
-Fill in the environment variables (example):
-
-PORT=3000
-DB_URI=mongodb://user:password@host:port/database_name
-JWT_SECRET=your_secret_key
-OTHER_VARIABLES=...
-
-
-If there are build tasks or database migrations/seeds, run them:
-
-npm run build
-# or
-npm run migrate
-# or
-npm run seed
-
-
-(Check which scripts are available in package.json.)
-
-▶️ Running the API
+## ▶️ Running the API
 
 To run locally:
 
+```bash
 npm run dev
 # or
 npm start
+```
 
+The API will be available at `http://localhost:PORT`, where `PORT` is the port defined in `.env` (e.g., 3000).
 
-The API will be available at http://localhost:PORT, where PORT is the port defined in .env (e.g., 3000).
-
-📄 Documentation
+## 📄 Documentation
 
 If Swagger is configured, API documentation can be accessed at:
 
+```
 http://localhost:PORT/swagger
-
+```
 
 Here you can see endpoints, request/response schemas, and parameters.
 
-🔐 Security
+## 🔐 Security
 
-JWT / token-based authentication (if applicable)
+* JWT / token-based authentication (if applicable)
+* Input validation (middlewares)
+* Sanitization / data injection prevention
 
-Input validation (middlewares)
+## 📦 Project Structure
 
-Sanitization / data injection prevention
+* **api/** – initialization and configuration files
+* **config/** – database, environment settings
+* **controllers/** – business logic
+* **models/** – data schemas / ORM / ODM
+* **routes/** – endpoint definitions
+* **middlewares/** – functions like authentication, validation, etc.
+* **utils/** – utility/helper functions
+* **public/** – static files (if any)
+* **.env.example** – example environment variables
 
-📦 Project Structure
-
-api/ – initialization and configuration files
-
-config/ – database, environment settings
-
-controllers/ – business logic
-
-models/ – data schemas / ORM / ODM
-
-routes/ – endpoint definitions
-
-middlewares/ – functions like authentication, validation, etc.
-
-utils/ – utility/helper functions
-
-public/ – static files (if any)
-
-.env.example – example environment variables
-
-🧪 Testing
+## 🧪 Testing
 
 If tests exist:
 
+```bash
 npm run test
-
+```
 
 Include info on testing framework (Jest, Mocha, etc.), test locations, and coverage.
 
-✅ Deployment
+## ✅ Deployment
 
 General steps to deploy:
 
-Prepare the server (Node.js, database, etc.)
+1. Prepare the server (Node.js, database, etc.)
+2. Set production environment variables
+3. Build / compile if necessary
+4. Start with `npm start` or a process manager (PM2, Docker, etc.)
+5. Ensure SSL, backups, and monitoring are configured
 
-Set production environment variables
+## 📪 Contribution
 
-Build / compile if necessary
+1. Fork this repository
+2. Create a feature/fix branch: `git checkout -b my-feature`
+3. Commit changes with clear messages
+4. Submit a pull request describing your changes
+5. Wait for review
 
-Start with npm start or a process manager (PM2, Docker, etc.)
+## 📝 License
 
-Ensure SSL, backups, and monitoring are configured
-
-📪 Contribution
-
-Fork this repository
-
-Create a feature/fix branch: git checkout -b my-feature
-
-Commit changes with clear messages
-
-Submit a pull request describing your changes
-
-Wait for review
-
-📝 License
-
-This project is licensed under the MIT License. See the LICENSE file for details. (GitHub link
-)
+This project is licensed under the **MIT License**. See the `LICENSE` file for details. ([GitHub link](https://github.com/ItsJuniorDias/Royal-City-API))
