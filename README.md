@@ -106,14 +106,6 @@ Here you can see endpoints, request/response schemas, and parameters.
 * **public/** – static files (if any)
 * **.env.example** – example environment variables
 
-## 🧪 Testing
-
-If tests exist:
-
-```bash
-npm run test
-```
-
 Include info on testing framework (Jest, Mocha, etc.), test locations, and coverage.
 
 ## ✅ Deployment
